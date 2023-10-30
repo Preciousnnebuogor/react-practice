@@ -1,0 +1,35 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: rgb(140, 191, 174);
+}
+.Navbar{
+    display: flex;
+    align-items: center;
+    background-color: antiquewhite;
+    justify-content: space-between;
+}
+
+.Navbar ul{
+   display: flex  
+}
+
+.Navbar ul li{
+    display: block;
+    list-style: circle;
+    margin: 0.5rem;
+    padding: 0.05rem;
+    align-items: center;
+    text-transform: uppercase;
+    justify-content: space-between;
+    
+    
+    
+}
+.Navbar h1{
+    margin: 1rem;
+    font-weight: bold;
+    
+    
+}
