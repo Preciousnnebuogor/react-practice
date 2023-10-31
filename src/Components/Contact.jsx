@@ -1,20 +1,65 @@
-import style from "./Contact.module.css"
+import { useState } from "react";
+import styles from "./Contact.module.css";
+
 export default function Contact() {
-    return <div>
-        <section className="about" id="about">
-   <h1 className="heading"> <span>about</span></h1>
-   <div className="row">
-    <div className="video-container">
-      <video src="image/2023-06-08-165738502.mp4" loop autoplay muted></video>
-      <h3>best flower sellers</h3>
-    </div>
-     <div className="content">
-     <h3>why choose us?</h3>
-     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui similique voluptatum dolore nesciunt ullam temporibus suscipit asperiores dolorem? Nesciunt quas quod quidem praesentium voluptatem vitae nihil, ullam labore officiis laborum!</p>
-     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed porro nam, aspernatur pariatur tempore voluptatum necessitatibus nemo amet voluptatibus non.</p>
-     <a href="#" className="btn">learn more</a>
-     </div>
-   </div>
-</section>
-    </div>
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    mesage: "",
+  });
+  const handleChange = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setData({ ...data, [name]: value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(data);
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className={styles.form}>
+      <h1>
+        CONTACT <span>HERE</span>
+      </h1>
+      <input
+        type="text"
+        name="name"
+        id=""
+        onChange={handleChange}
+        value={data.name}
+        placeholder="Enter Name"
+      />
+      <input
+        type="email"
+        name="email"
+        id=""
+        onChange={handleChange}
+        value={data.email}
+        placeholder="Enter Email"
+      />
+      <input
+        type="phone"
+        name="phone"
+        id=""
+        onChange={handleChange}
+        value={data.phone}
+        placeholder="Enter Phone"
+      />
+      <textarea
+        type="message"
+        id=""
+        onChange={handleChange}
+        value={data.message}
+        cols="30"
+        rows="10"
+        placeholder="Type Here...."
+      />
+      <button type="submit">Send</button>
+      <p>
+        {data.name},{data.email},{data.phone},{data.message}
+      </p>
+    </form>
+  );
 }
