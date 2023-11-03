@@ -1,5 +1,5 @@
-import style from "./Contact.module.css";
-export default function Contact() {
+import style from "./About.module.css";
+export default function AboutUs() {
   return (
     <div>
       <section className={style.about}  id="about">
