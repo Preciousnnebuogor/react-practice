@@ -3,7 +3,9 @@
 import Contact from "./Components/Contact/Contact"
 import Navbar from "./Components/Navbar/Navbar"
 import Form from "./Components/Form/Form"
-import AboutUs from "./Components/About/Aboutus"
+import AboutUs from "./Components/About/AboutUs"
+
+
 
 function App() {
 
